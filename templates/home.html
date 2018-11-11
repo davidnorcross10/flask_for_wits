@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div>
+      {% for datum in data %}
+      <p>{{url}}</p>
+      <h1>{{datum}}</h1>
+      <p>{{data[datum]}}</p>
+      {% endfor %}
+      <button onclick="displayData()">Display Data</button>
+    </div>
+    <div class="container">
+      <div id="keys">
+        <p>data will go here</p>
+      </div>
+      <div id="values">
+        <p>data will go here</p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var wits_data = {{data|tojson}};
+      var wits_value_dict = wits_data.dataSets[0].series; //dict-like
+      var units = wits_data.structure.dimensions.series[4].values[0].name; //string
+      var wits_products_key_array = wits_data.structure.dimensions.series[3].values; //array-like
+
+      var wits_dataSets_stringified = JSON.stringify(wits_data.dataSets[0].series, null, 2);
+      //var wits_dataSets_0_series = wits_data.dataSets[0].series;
+      //var table_units = wits_data.structure.dimensions.series[4].values[0].name;
+      function displayData() {
+        var keys = "";
+        var values = "";
+        for (i=1;i<wits_products_key_array.length;i++) {
+          keys += wits_products_key_array[i].name;
+          keys += ": "
+          keys += "<br />";
+
+          sector_key = "0:0:0:" + i + ":0";
+          values += wits_value_dict[sector_key].observations[0][0]
+          values += "<br />";
+        };
+        document.getElementById("keys").innerHTML = keys;
+        document.getElementById("values").innerHTML = values;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  overflow: auto;
+}
+
+body {
+  margin: 30px;
+}
+
+.container div {
+  position: relative;
+  padding: 4px;
+  width: 50%;
+}
+
+#keys {
+  float: left;
+  text-align: right;
+}
+
+#values {
+  float: left;
+  text-align: left;
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 200px;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Graphing Page</h2>
+    <p>Select the indicators you wish to graph below</p>
+    <form class="form-inline" action="/action_page.php">
+      <label for="reporter">Reporter:</label>
+      <input type="text" name="reporter" placeholder="Reporter">
+      <label for="year">Year:</label>
+      <input type="text" name="year" placeholder="Year">
+      <label for="partner">Partner:</label>
+      <input type="text" name="partner" placeholder="Partner">
+      <label for="product">Product:</label>
+      <input type="text" name="product" placeholder="Product">
+      <label for="indicator">Indicator:</label>
+      <input type="text" name="indicator" placeholder="Indicator">
+    </form>
+    <div>
+      <p>hello world</p>
+    </div>
+  </body>
+</html>
