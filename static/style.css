@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  outline: none;
 }
 
 .container {
@@ -43,7 +44,51 @@ body {
   vertical-align: middle;
   margin: 5px 10px 5px 0;
   padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   width: 200px;
+}
+
+.form-inline input:focus {
+  border: 1px solid #999;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+}
+
+form {
+  float: left;
+}
+
+.autocomplete {
+  position: relative;
+  width: 200px;
+}
+
+.autocomplete input {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.autocomplete input:focus {
+  border: 1px solid #999;
+}
+
+.autocomplete-items {
+  background: #eee;
+  overflow: auto;
+  width: inherit;
+  position: absolute;
+  z-index: 99;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-active {
+  background-color: DodgerBlue;
+  color: #ffffff;
 }

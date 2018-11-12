@@ -1,20 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from pyscripts import wits
 app = Flask(__name__)
 
-data = [
-    {
-    "id":"food",
-    "value":"20"
-    },
-    {
-    "id":"services",
-    "value":"30"
-    }
-]
-
 data = wits.url_formatter("usa","2000","wld","all","XPRT-TRD-VL")
-
+countryList = wits.returnJSON('/home/david/Documents/Flask_test/static/country_codes_json.txt')
 @app.route("/")
 @app.route("/home")
 def hello():
@@ -22,9 +11,9 @@ def hello():
     #"<h2>Home Page</h2>"
     #render_template(home.html)
 
-@app.route("/graphs")
+@app.route("/graphs",methods=["GET","POST"])
 def graphs():
-    return render_template('graphs.html',data=data[0],url=data[1])
+    return render_template('graphs.html',data=data[0],url=data[1],countryList=countryList)
     #"<h2>Home Page</h2>"
     #render_template(home.html)
 

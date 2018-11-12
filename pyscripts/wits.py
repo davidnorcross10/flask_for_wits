@@ -43,6 +43,13 @@ def get_observations(data):
 
     return observation_dict
 
+def returnJSON(path):
+    fileString = open(path).read()
+    fileJSON = json.loads(fileString)
+    return(fileJSON)
+
+#print(returnJSON('/home/david/Documents/Flask_test/static/country_codes_json.txt'))
+
 '''for i in data["structure"]["dimensions"]:
     print(i)
     print(data["structure"]["dimensions"][i])
