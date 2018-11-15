@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from pyscripts import wits
 app = Flask(__name__)
 
-data = wits.url_formatter("usa","2000","wld","all","XPRT-TRD-VL")
+data = wits.url_formatter("swz","2000","wld","all","XPRT-TRD-VL")
 countryList = wits.returnJSON('/home/david/Documents/Flask_test/static/country_codes_json.txt')
 @app.route("/")
 @app.route("/home")

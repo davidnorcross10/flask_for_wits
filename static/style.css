@@ -92,3 +92,14 @@ form {
   background-color: DodgerBlue;
   color: #ffffff;
 }
+
+.canvas-container {
+  position: relative;
+  width: 50%;
+  height: 600px;
+  border: 2px solid red;
+}
+
+#myChart {
+
+}
